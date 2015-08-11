@@ -1,0 +1,33 @@
+Author:
+    LingTi Kong    konglt@gmail.com
+   
+Function:
+    This code is designed to evaluate the auto(cross)-correlation of data in one or more columns
+    of a file, by using the fftw 3.1.2 libraries.
+
+Usage:
+    acf [options] file [column(s)]
+
+
+Options:
+    -o output_file         To specify the output file name; if not specified, output to acf.dat.
+
+    -n max_lag             To specify the maximum lag required. If not specified, it will be the
+                           smae as the total number of data read from file; if specified value is
+                           greater than the total number of data, it will be reset to be the same
+                           as the total number of data.
+    
+    -ave/-nave             To specify if the average value will be subtracted from the data sets
+                           or not. By default, the average value is subtracted.
+
+    -t time_column         To specify the column number for time, by default, it's the 1st column.
+
+    -c/-complex            To specify that input data is complex numbers; in this case, the column
+                           number specified should correspond to the real part, and the next column
+                           is the corresponding imaginary part.
+    -cross/-cr             To specify that the cross-correlation is required
+
+    file                   To specify the file to read data.
+   
+    column(s)              To specify the columns whose ACF will be evaluated in ``file'', if not
+                           specified, use column 2.
